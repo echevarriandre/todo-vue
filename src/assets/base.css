@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply focus:outline-none hover:outline-none active:outline-none focus-within:outline-none focus-visible:outline-none;
+}
+
+html,
+body {
+  @apply h-full;
+}
+
+/* Code for Firefox */
+::-moz-selection {
+  @apply text-white bg-green-400;
+}
+
+::selection {
+  @apply text-white bg-green-400;
+}
+
+#app {
+  @apply flex w-full h-full font-rubik;
+}
