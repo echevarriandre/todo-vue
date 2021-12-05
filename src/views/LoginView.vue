@@ -27,6 +27,7 @@ import { ref } from "@vue/runtime-core";
 import { useRouter } from "vue-router";
 
 import { useAuthStore } from "@/stores/auth";
+import { routeNames } from "@/router/routes";
 
 const router = useRouter();
 const authStore = useAuthStore();
@@ -45,7 +46,7 @@ const login = async (): Promise<void> => {
     if (redirectUrl) {
       window.location.href = redirectUrl;
     } else {
-      router.push({ name: "Tasks" });
+      router.push({ name: routeNames.tasks });
     }
 
     return;

@@ -22,7 +22,7 @@
         </button>
       </div>
     </header>
-    <article class="text-justify overflow-scroll" :class="{ 'line-through text-gray-300': checked, 'text-gray-500': !checked }">{{ text }}</article>
+    <article class="text-justify overflow-auto" :class="{ 'line-through text-gray-300': checked, 'text-gray-500': !checked }">{{ text }}</article>
   </div>
 </template>
 

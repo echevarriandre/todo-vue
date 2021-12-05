@@ -4,13 +4,13 @@
       <router-link to="/" class="tracking-[0.25em] h-9 text-black hover:text-red-400 active:text-red-500 text-3xl transition duration-200">todo</router-link>
     </div>
     <div class="flex flex-col gap-4 mt-14">
-      <router-link :to="{ name: 'Tasks' }" class="flex gap-4 items-center h-12 hover:text-purple-400 text-lg transition duration-300">
+      <router-link :to="{ name: routeNames.tasks }" class="flex gap-4 items-center h-12 hover:text-purple-400 text-lg transition duration-300">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
         </svg>
         <span>Tasks</span>
       </router-link>
-      <router-link :to="{ name: 'Categories' }" class="flex gap-4 items-center h-12 hover:text-purple-400 text-lg transition duration-300">
+      <router-link :to="{ name: routeNames.categories }" class="flex gap-4 items-center h-12 hover:text-purple-400 text-lg transition duration-300">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
         </svg>
@@ -18,7 +18,7 @@
       </router-link>
     </div>
     <div class="absolute bottom-0 flex flex-col gap-4 mb-14">
-      <router-link :to="{ name: 'Settings' }" class="flex gap-4 items-center h-12 hover:text-purple-400 text-lg transition duration-300">
+      <router-link :to="{ name: routeNames.settings }" class="flex gap-4 items-center h-12 hover:text-purple-400 text-lg transition duration-300">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path
             stroke-linecap="round"
@@ -42,6 +42,7 @@
 
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+import { routeNames } from "@/router/routes";
 
 import { useAuthStore } from "@/stores/auth";
 
@@ -49,10 +50,10 @@ const authStore = useAuthStore();
 const router = useRouter();
 
 function logout(): void {
+  router.push({ name: routeNames.login });
   localStorage.removeItem("user");
   localStorage.removeItem("token");
   authStore.logout();
-  router.push({ name: "Login" });
 }
 </script>
 

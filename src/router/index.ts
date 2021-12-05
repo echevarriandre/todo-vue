@@ -1,6 +1,6 @@
 import { useAuthStore } from "@/stores/auth";
 import { createRouter, createWebHistory } from "vue-router";
-import { routes } from "./routes";
+import { routeNames, routes } from "./routes";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,10 +16,10 @@ router.beforeEach((to, from, next): void => {
 
   if (isAuthenticatedRoute && !isGuestRoute && !authStore.token) {
     // Block Guests from accessing protected routes
-    next({ name: "Login", query: { redirect: window.location.href } });
+    next({ name: routeNames.login, query: { redirect: window.location.href } });
   } else if (isGuestRoute && !isAuthenticatedRoute && authStore.token) {
     // Block Users from accessing guest routes
-    next({ name: from.name ?? "Tasks" });
+    next({ name: from.name ?? routeNames.tasks });
   } else {
     next();
   }

@@ -1,9 +1,17 @@
 import { RouteRecordRaw } from "vue-router";
 
+export const routeNames = {
+  landingPage: "Landing Page",
+  tasks: "Tasks",
+  categories: "Categories",
+  settings: "Settings",
+  login: "Login",
+};
+
 export const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "Landing Page",
+    name: routeNames.landingPage,
     component: () => import("@/views/LandingPageView.vue"),
     meta: {
       guest: true,
@@ -12,7 +20,7 @@ export const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/tasks",
-    name: "Tasks",
+    name: routeNames.tasks,
     component: () => import("@/views/TasksView.vue"),
     meta: {
       authenticated: true,
@@ -22,7 +30,7 @@ export const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/categories",
-    name: "Categories",
+    name: routeNames.categories,
     component: () => import("@/views/LandingPageView.vue"),
     meta: {
       authenticated: true,
@@ -32,7 +40,7 @@ export const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/settings",
-    name: "Settings",
+    name: routeNames.settings,
     component: () => import("@/views/LandingPageView.vue"),
     meta: {
       authenticated: true,
@@ -42,7 +50,7 @@ export const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/login",
-    name: "Login",
+    name: routeNames.login,
     component: () => import("@/views/LoginView.vue"),
     meta: {
       guest: true,
