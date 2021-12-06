@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full" :class="{ dark: settingsStore.darkMode }">
+  <div id="wrapper" class="w-full h-full" :class="{ dark: settingsStore.darkMode }">
     <Main v-if="authStore.isAuthenticated && route.meta.layout === 'main'">
       <router-view />
     </Main>

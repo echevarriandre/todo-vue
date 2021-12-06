@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center w-full bg-white bg-gradient-to-tr from-red-400 to-pink-500">
+  <div class="flex flex-col items-center justify-center w-full h-full bg-white bg-gradient-to-tr from-red-400 to-pink-500">
     <div class="relative p-10 w-80 bg-white rounded-3xl shadow-xl md:w-96">
       <h1 class="flex items-center justify-between text-center">
         <span class="text-black text-5xl tracking-wider">todo</span>

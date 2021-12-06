@@ -24,8 +24,7 @@ if (window.localStorage) {
     authStore.token = window.localStorage.getItem("token") || undefined;
   }
 
-  // TODO convert to bool
-  settingsStore.darkMode = window.localStorage.getItem("darkMode") ?? false;
+  settingsStore.darkMode = window.localStorage.getItem("darkMode") == "true";
 }
 
 app.mount("#app");
