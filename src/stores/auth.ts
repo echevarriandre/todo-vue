@@ -13,6 +13,7 @@ export const useAuthStore = defineStore({
   actions: {
     async login(username: string, password: string): Promise<boolean> {
       //TODO: axios login user
+      await new Promise((resolve) => setTimeout(resolve, 1500));
       if (username !== "andre" || password !== "andre") {
         return false;
       }

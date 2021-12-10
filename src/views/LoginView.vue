@@ -11,11 +11,18 @@
       </h1>
       <form class="mt-10" @keypress.enter.prevent="login">
         <div class="mb-10">
-          <TInput v-model:modelValue="username" label="Username" type="text" />
-          <TInput v-model:modelValue="password" label="Password" type="password" />
+          <TInput v-model:modelValue="username" label="Username" type="text" :disabled="loading" />
+          <TInput v-model:modelValue="password" label="Password" type="password" :disabled="loading" />
           <p v-show="error" class="text-red-500">{{ error }}</p>
         </div>
-        <button class="px-12 py-2 w-full hover:text-black text-white bg-black hover:bg-white rounded-lg transition duration-200 hover:ring-2 ring-inset hover:ring-black" @click.prevent="login">Login</button>
+        <button
+          class="px-12 py-2 w-full hover:text-black text-white bg-black hover:bg-white rounded-lg transition duration-200 hover:ring-2 ring-inset hover:ring-black disabled:text-black disabled:bg-white disabled:ring-2 disabled:ring-black"
+          :disabled="loading"
+          @click.prevent="login"
+        >
+          <span v-if="!loading">Login</span>
+          <span v-else>Logging in...</span>
+        </button>
       </form>
     </div>
   </div>
@@ -32,11 +39,13 @@ import { routeNames } from "@/router/routes";
 const router = useRouter();
 const authStore = useAuthStore();
 
+const loading = ref(false);
 const username = ref("");
 const password = ref("");
 const error = ref<string | null>(null);
 
 const login = async (): Promise<void> => {
+  loading.value = true;
   const result = await authStore.login(username.value, password.value);
 
   if (result) {
@@ -52,6 +61,7 @@ const login = async (): Promise<void> => {
     return;
   }
 
+  loading.value = false;
   error.value = "Incorrect username or password!";
 };
 </script>

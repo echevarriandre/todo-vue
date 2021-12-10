@@ -5,14 +5,20 @@
       v-model="value"
       :type="type"
       :placeholder="label"
-      :class="[...inputClasses, 'peer px-4 pb-2 pt-5 border-2 border-transparent placeholder-transparent transition duration-300 hover:bg-white hover:border-gray-200 focus:bg-white focus:border-purple-400 bg-gray-100 rounded-lg']"
+      :class="[
+        ...inputClasses,
+        'peer px-4 pb-2 pt-5 border-2 border-transparent placeholder-transparent transition duration-300 focus:bg-white focus:border-purple-400 bg-gray-100 rounded-lg disabled:text-gray-600',
+        { 'hover:bg-white hover:border-gray-200': !disabled },
+      ]"
+      :disabled="disabled"
     />
     <label
       v-if="label"
       :for="label + '-input'"
       class="absolute left-0.5 top-1.5 peer-focus:top-1.5 peer-placeholder-shown:top-4 ml-4 peer-placeholder-shown:text-gray-400 text-gray-500 peer-focus:text-gray-500 peer-placeholder-shown:text-base peer-focus:text-xs text-xs transition-all"
-      >{{ label }}</label
     >
+      {{ label }}
+    </label>
   </div>
 </template>
 
@@ -25,6 +31,7 @@ defineProps({
   label: { type: String, default: "" },
   inputClasses: { type: String, default: "" },
   labelClasses: { type: String, default: "" },
+  disabled: { type: Boolean, default: false },
 });
 
 const emit = defineEmits(["update:modelValue"]);
