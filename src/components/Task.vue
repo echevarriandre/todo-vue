@@ -3,10 +3,10 @@
     <header class="flex justify-between mb-2 text-black">
       <div class="flex gap-2">
         <input v-model="checked" type="checkbox" />
-        <span :class="{ 'line-through text-gray-300': checked }">{{ title }}</span>
+        <span :style="{ color: color }" class="font-bold" :class="{ 'line-through text-slate-300': checked }">{{ title }}</span>
       </div>
       <div class="flex gap-2 items-center">
-        <button v-show="checked" class="hover:text-red-300 text-red-400 transition-all duration-300" @click.prevent="deleteTask">
+        <button v-if="checked" class="hover:text-red-300 text-red-400 transition-all duration-300" @click.prevent="deleteTask">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path
               fill-rule="evenodd"
@@ -15,14 +15,14 @@
             />
           </svg>
         </button>
-        <button class="text-gray-40 transition duration-200" :disabled="checked" :class="{ 'text-gray-300 cursor-default': checked, 'hover:text-purple-400': !checked }" @click.prevent="edit">
+        <button v-else class="text-slate-40 hover:text-purple-400" @click.prevent="edit">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
           </svg>
         </button>
       </div>
     </header>
-    <article class="text-justify overflow-auto" :class="{ 'line-through text-gray-300': checked, 'text-gray-500': !checked }">{{ text }}</article>
+    <article class="text-justify overflow-auto" :class="{ 'line-through text-slate-300': checked, 'text-slate-500': !checked }">{{ text }}</article>
   </div>
 </template>
 

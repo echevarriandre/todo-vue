@@ -1,5 +1,5 @@
 <template>
-  <nav class="relative px-10 w-72 h-full text-gray-700 bg-white border-r-2 border-gray-100">
+  <nav class="relative px-10 w-72 h-full text-slate-700 bg-white border-r-2 border-slate-100">
     <div class="mt-12">
       <router-link to="/" class="tracking-[0.25em] h-9 text-black hover:text-red-400 active:text-red-500 text-3xl transition duration-200">todo</router-link>
     </div>
@@ -41,10 +41,9 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from "vue-router";
 import { routeNames } from "@/router/routes";
-
 import { useAuthStore } from "@/stores/auth";
+import { useRouter } from "vue-router";
 
 const authStore = useAuthStore();
 const router = useRouter();

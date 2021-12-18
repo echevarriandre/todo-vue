@@ -16,9 +16,9 @@ const exampleText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
 const tasks = [
-  { title: "TODO 1", text: exampleText, color: "#f00", complete: false },
-  { title: "TODO 2", text: exampleText.slice(0, 80), color: "#ff0", complete: false },
-  { title: "TODO 3", text: exampleText.slice(0, 90), color: "#00f", complete: false },
-  { title: "TODO 4", text: exampleText.slice(0, 200), color: "#f0f", complete: false },
+  { title: "TODO 1", text: exampleText, color: "#ff5555", complete: false },
+  { title: "TODO 2", text: exampleText.slice(0, 80), color: "#ffb86c", complete: false },
+  { title: "TODO 3", text: exampleText.slice(0, 90), color: "#bd93f9", complete: false },
+  { title: "TODO 4", text: exampleText.slice(0, 200), color: "#ff79c6", complete: false },
 ];
 </script>

@@ -1,6 +1,6 @@
 <template>
   <header class="flex justify-between mt-12 w-full h-9">
-    <div class="flex gap-2 items-center text-gray-500 focus-within:text-purple-400">
+    <div class="flex gap-2 items-center text-slate-500 focus-within:text-purple-400">
       <label for="search-input" class="cursor-text">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -9,7 +9,7 @@
       <input
         id="search-input"
         v-model="search"
-        class="px-4 py-1 text-gray-500 bg-transparent hover:bg-white focus:bg-white border-2 hover:border-gray-200 focus:border-purple-400 border-transparent rounded-lg transition duration-300"
+        class="px-4 py-1 text-slate-500 bg-transparent hover:bg-white focus:bg-white border-2 hover:border-slate-200 focus:border-purple-400 border-transparent rounded-lg transition duration-300"
         type="text"
         name="global-search"
         placeholder="Search"
@@ -27,9 +27,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "@vue/runtime-core";
 import { useAuthStore } from "@/stores/auth";
 import { useSettingsStore } from "@/stores/settings";
+import { ref } from "@vue/runtime-core";
 
 const authStore = useAuthStore();
 const settingsStore = useSettingsStore();

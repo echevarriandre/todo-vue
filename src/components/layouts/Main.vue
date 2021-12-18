@@ -1,7 +1,7 @@
 <template>
-  <div class="flex w-full h-full bg-gray-50">
+  <div class="flex w-full h-full bg-slate-50">
     <Sidebar />
-    <div class="flex flex-col mx-20 w-full text-gray-700">
+    <div class="flex flex-col mx-20 w-full text-slate-700">
       <Header />
 
       <section class="mt-14 w-full">
@@ -12,6 +12,6 @@
 </template>
 
 <script setup lang="ts">
-import Sidebar from "./Sidebar.vue";
 import Header from "./Header.vue";
+import Sidebar from "./Sidebar.vue";
 </script>
