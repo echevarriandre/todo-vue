@@ -29,12 +29,11 @@
 </template>
 
 <script setup lang="ts">
-import TInput from "../components/tailwind/t-input.vue";
+import { routeNames } from "@/router/routes";
+import { useAuthStore } from "@/stores/auth";
 import { ref } from "@vue/runtime-core";
 import { useRouter } from "vue-router";
-
-import { useAuthStore } from "@/stores/auth";
-import { routeNames } from "@/router/routes";
+import TInput from "../components/tailwind/t-input.vue";
 
 const router = useRouter();
 const authStore = useAuthStore();

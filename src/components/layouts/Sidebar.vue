@@ -1,16 +1,16 @@
 <template>
-  <nav class="relative px-10 w-72 h-full text-slate-700 bg-white border-r-2 border-slate-100">
+  <nav class="relative px-10 w-72 h-full text-slate-700 bg-white dark:bg-[#333434] border-r-2 border-slate-100 dark:border-[#2C2C2C]">
     <div class="mt-12">
-      <router-link to="/" class="tracking-[0.25em] h-9 text-black hover:text-red-400 active:text-red-500 text-3xl transition duration-200">todo</router-link>
+      <router-link to="/" class="tracking-[0.25em] h-9 text-black dark:text-white hover:text-red-400 active:text-red-500 text-3xl transition duration-200">todo</router-link>
     </div>
     <div class="flex flex-col gap-4 mt-14">
-      <router-link :to="{ name: routeNames.tasks }" class="flex gap-4 items-center h-12 hover:text-purple-400 text-lg transition duration-300">
+      <router-link :to="{ name: routeNames.tasks }" class="flex gap-4 items-center h-12 dark:text-[#DBDBDB] hover:text-purple-300 dark:hover:text-blue-300 text-lg transition duration-300">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
         </svg>
         <span>Tasks</span>
       </router-link>
-      <router-link :to="{ name: routeNames.categories }" class="flex gap-4 items-center h-12 hover:text-purple-400 text-lg transition duration-300">
+      <router-link :to="{ name: routeNames.categories }" class="flex gap-4 items-center h-12 dark:text-[#DBDBDB] hover:text-purple-300 dark:hover:text-blue-300 text-lg transition duration-300">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
         </svg>
@@ -18,7 +18,7 @@
       </router-link>
     </div>
     <div class="absolute bottom-0 flex flex-col gap-4 mb-14">
-      <router-link :to="{ name: routeNames.settings }" class="flex gap-4 items-center h-12 hover:text-purple-400 text-lg transition duration-300">
+      <router-link :to="{ name: routeNames.settings }" class="flex gap-4 items-center h-12 dark:text-[#DBDBDB] hover:text-purple-300 dark:hover:text-blue-300 text-lg transition duration-300">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path
             stroke-linecap="round"
@@ -30,7 +30,7 @@
         </svg>
         <span>Settings</span>
       </router-link>
-      <button class="flex gap-4 items-center h-12 hover:text-purple-400 text-lg transition duration-300" @click.prevent="logout()">
+      <button class="flex gap-4 items-center h-12 dark:text-[#DBDBDB] hover:text-purple-300 dark:hover:text-blue-300 text-lg transition duration-300" @click.prevent="logout()">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
         </svg>
@@ -58,6 +58,6 @@ function logout(): void {
 
 <style scoped lang="postcss">
 .router-link-active {
-  @apply text-blue-400;
+  @apply text-blue-400 dark:text-blue-400;
 }
 </style>

@@ -1,12 +1,17 @@
 <template>
-  <div class="h-fit-content flex flex-col p-4 w-64 max-h-64 bg-white rounded-3xl shadow-sm overflow-hidden">
+  <div class="h-fit-content flex flex-col p-4 w-64 max-h-64 bg-white dark:bg-[#2C2C2C] rounded-3xl shadow-sm overflow-hidden">
     <header class="flex justify-between mb-2 text-black">
       <div class="flex gap-2">
         <input v-model="checked" type="checkbox" />
         <span :style="{ color: color }" class="font-bold" :class="{ 'line-through text-slate-300': checked }">{{ title }}</span>
       </div>
       <div class="flex gap-2 items-center">
-        <button v-if="checked" class="hover:text-red-300 text-red-400 transition-all duration-300" @click.prevent="deleteTask">
+        <button v-if="!checked" class="text-slate-40 dark:text-white hover:text-purple-400" @click.prevent="edit">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+          </svg>
+        </button>
+        <button v-else class="hover:text-red-300 text-red-400 transition-all duration-300" @click.prevent="deleteTask">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path
               fill-rule="evenodd"
@@ -15,14 +20,11 @@
             />
           </svg>
         </button>
-        <button v-else class="text-slate-40 hover:text-purple-400" @click.prevent="edit">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-          </svg>
-        </button>
       </div>
     </header>
-    <article class="text-justify overflow-auto" :class="{ 'line-through text-slate-300': checked, 'text-slate-500': !checked }">{{ text }}</article>
+    <article class="text-justify overflow-auto" :class="{ 'line-through text-slate-300 dark:text-[#b1b1b1]': checked, 'text-slate-500 dark:text-[#DBDBDB]': !checked }">
+      {{ text }}
+    </article>
   </div>
 </template>
 
