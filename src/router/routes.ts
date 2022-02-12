@@ -1,12 +1,12 @@
 import { RouteRecordRaw } from "vue-router";
 
-export const routeNames = {
-  landingPage: "Landing Page",
-  tasks: "Tasks",
-  categories: "Categories",
-  settings: "Settings",
-  login: "Login",
-};
+export enum routeNames {
+  landingPage = "Landing Page",
+  tasks = "Tasks",
+  categories = "Categories",
+  settings = "Settings",
+  login = "Login",
+}
 
 export const routes: Array<RouteRecordRaw> = [
   {
