@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  @apply focus:outline-none hover:outline-none active:outline-none focus-within:outline-none focus-visible:outline-none;
+  @apply focus-within:outline-none hover:outline-none focus:outline-none focus-visible:outline-none active:outline-none;
 }
 
 html,
@@ -13,13 +13,13 @@ body {
 
 /* Code for Firefox */
 ::-moz-selection {
-  @apply text-white bg-green-400;
+  @apply bg-green-400 text-white;
 }
 
 ::selection {
-  @apply text-white bg-green-400;
+  @apply bg-green-400 text-white;
 }
 
 #app {
-  @apply flex w-full h-full font-rubik;
+  @apply flex h-full w-full font-rubik;
 }

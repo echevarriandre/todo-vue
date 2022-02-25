@@ -3,7 +3,7 @@
     <header>
       <h1 class="text-5xl tracking-wider dark:text-white">Tasks</h1>
     </header>
-    <div class="flex flex-wrap gap-4 mt-12">
+    <div class="mt-12 flex flex-wrap gap-4">
       <task v-for="task in tasks" :key="task.title" :title="task.title" :text="task.text" :complete="task.complete" :color="task.color" />
     </div>
   </section>

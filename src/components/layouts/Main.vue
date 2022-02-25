@@ -1,7 +1,7 @@
 <template>
-  <div class="flex w-full h-full bg-slate-50 dark:bg-[#38393a]">
+  <div class="flex h-full w-full bg-slate-50 dark:bg-[#38393a]">
     <Sidebar />
-    <div class="flex flex-col mx-20 w-full text-slate-700">
+    <div class="mx-20 flex w-full flex-col text-slate-700">
       <Header />
 
       <section class="mt-14 w-full">
