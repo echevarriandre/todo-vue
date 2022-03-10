@@ -1,10 +1,9 @@
-import { createApp } from "vue";
 import { createPinia } from "pinia";
-
-import App from "./App.vue";
-import router from "./router";
-import "./assets/base.css";
+import { createApp } from "vue";
 import { User } from "./@types";
+import App from "./App.vue";
+import "./assets/base.css";
+import router from "./router";
 import { useAuthStore } from "./stores/auth";
 import { useSettingsStore } from "./stores/settings";
 
@@ -24,7 +23,11 @@ if (window.localStorage) {
     authStore.token = window.localStorage.getItem("token") || undefined;
   }
 
-  settingsStore.darkMode = window.localStorage.getItem("darkMode") == "true";
+  if (!window.localStorage.getItem("darkMode")) {
+    settingsStore.darkMode = window.matchMedia("(prefers-color-scheme: dark").matches;
+  } else {
+    settingsStore.darkMode = window.localStorage.getItem("darkMode") == "true";
+  }
 }
 
 app.mount("#app");

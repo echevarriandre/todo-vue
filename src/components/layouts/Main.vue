@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-full w-full bg-slate-50 dark:bg-[#38393a]">
+  <div class="flex h-full w-full bg-slate-50 dark:bg-slate-900">
     <Sidebar />
     <div class="mx-20 flex w-full flex-col text-slate-700">
       <Header />

@@ -22,6 +22,7 @@
     "*": "prettier -w -u"
   },
   "dependencies": {
+    "@heroicons/vue": "^1.0.6",
     "pinia": "^2.0.4",
     "vue": "^3.2.22",
     "vue-router": "^4.0.12"

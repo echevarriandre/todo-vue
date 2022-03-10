@@ -3,6 +3,7 @@
     <h1 class="text-5xl tracking-wider dark:text-white">Tasks</h1>
   </header>
   <div class="mt-12 flex flex-wrap gap-4">
+    <!-- TODO Use Masonry Layout -->
     <task v-for="task in tasks" :key="task.title" :title="task.title" :text="task.text" :complete="task.complete" :color="task.color" />
   </div>
 </template>
