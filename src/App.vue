@@ -10,7 +10,6 @@
 
 <script setup lang="ts">
 import Main from "@/components/layouts/Main.vue";
-import { watchEffect } from "vue";
 import { useRoute } from "vue-router";
 import { useAuthStore } from "./stores/auth";
 import { useSettingsStore } from "./stores/settings";
@@ -18,8 +17,4 @@ import { useSettingsStore } from "./stores/settings";
 const authStore = useAuthStore();
 const settingsStore = useSettingsStore();
 const route = useRoute();
-
-watchEffect(() => {
-  console.log(settingsStore.darkMode);
-});
 </script>
