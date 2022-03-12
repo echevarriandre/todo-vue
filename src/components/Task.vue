@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-fit-content max-h-64 w-64 flex-col overflow-hidden rounded-3xl bg-white p-4 shadow-sm dark:bg-slate-800">
+  <div class="flex h-fit-content max-h-64 w-64 flex-col overflow-hidden rounded-3xl bg-white p-4 shadow-sm dark:bg-zinc-900">
     <header class="mb-2 flex justify-between text-black">
       <div class="flex gap-2">
         <input v-model="checked" type="checkbox" />
@@ -7,14 +7,14 @@
       </div>
       <div class="flex items-center gap-2">
         <button v-if="!checked" class="text-slate-40 text-slate-500 hover:text-sky-400 dark:text-white" @click.prevent="edit">
-          <pencil-icon class="h-4 w-4" />
+          <PencilIcon class="h-4 w-4" />
         </button>
         <button v-else class="text-red-400 transition-all duration-300 hover:text-red-300" @click.prevent="deleteTask">
-          <trash-icon class="h-4 w-4" />
+          <TrashIcon class="h-4 w-4" />
         </button>
       </div>
     </header>
-    <article class="overflow-auto text-justify" :class="{ 'text-slate-300 line-through dark:text-slate-500': checked, 'text-slate-500 dark:text-slate-200': !checked }">
+    <article class="overflow-auto text-justify" :class="{ 'text-slate-300 line-through dark:text-neutral-500': checked, 'text-slate-500 dark:text-neutral-300': !checked }">
       {{ text }}
     </article>
   </div>
