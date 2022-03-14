@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-fit-content max-h-64 w-64 flex-col overflow-hidden rounded-3xl bg-white p-4 shadow-sm dark:bg-zinc-900">
+  <div class="mb-4 flex h-fit-content max-h-64 flex-col overflow-hidden rounded-3xl bg-white p-4 shadow-sm dark:bg-zinc-900 2xl:mb-0 2xl:w-64">
     <header class="mb-2 flex justify-between text-black">
       <div class="flex gap-2">
         <input v-model="checked" type="checkbox" />

@@ -32,7 +32,7 @@
       <span>{{ username }}</span>
     </div>
     <button>
-      <MenuIcon class="h-6 w-6" />
+      <MenuIcon class="h-6 w-6 dark:text-neutral-100" />
     </button>
   </header>
 </template>

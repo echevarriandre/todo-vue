@@ -2,8 +2,7 @@
   <header class="text-center md:text-left">
     <h1 class="text-5xl tracking-wider dark:text-white">Tasks</h1>
   </header>
-  <div class="mt-12 flex flex-wrap justify-center gap-4 md:justify-start">
-    <!-- TODO Use Masonry Layout -->
+  <div class="mt-12 columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:flex 2xl:flex-wrap">
     <Task v-for="task in tasks" :key="task.title" :title="task.title" :text="task.text" :complete="task.complete" :color="task.color" />
   </div>
 </template>
